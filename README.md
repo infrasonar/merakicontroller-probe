@@ -1,7 +1,9 @@
 [![CI](https://github.com/infrasonar/merakicontroller-probe/workflows/CI/badge.svg)](https://github.com/infrasonar/merakicontroller-probe/actions)
 [![Release Version](https://img.shields.io/github/release/infrasonar/merakicontroller-probe)](https://github.com/infrasonar/merakicontroller-probe/releases)
 
-# InfraSonar Ping Probe
+# InfraSonar Meraki Controller Probe
+
+Documentation: https://docs.infrasonar.com/collectors/probes/merakicontroller/
 
 ## Environment variable
 
@@ -30,14 +32,19 @@ See the [SNMP probe](https://github.com/infrasonar/snmp-probe#config).
 ## Dry run
 
 Available checks:
-- `XXX`
+- `controller`
+- `device`
+- `interface`
+- `network`
+- `ssid`
+- `vlan`
 
 Create a yaml file, for example _(test.yaml)_:
 
 ```yaml
 asset:
   name: "foo.local"
-  check: "XXX"
+  check: "controller"
   config:
     address: "192.168.1.2"
 ```

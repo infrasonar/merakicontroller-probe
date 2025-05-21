@@ -1,0 +1,2052 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "enterprises",
+        "MODULE-IDENTITY",
+        "OBJECT-TYPE",
+        "NOTIFICATION-TYPE",
+        "IpAddress",
+        "Counter32"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "DateAndTime",
+        "DisplayString"
+      ]
+    ],
+    [
+      "IF-MIB",
+      [
+        "ifIndex",
+        "InterfaceIndex"
+      ]
+    ],
+    [
+      "RFC1213-MIB",
+      [
+        "PhysAddress"
+      ]
+    ]
+  ],
+  "cloudController": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "meraki",
+      1
+    ]
+  },
+  "meraki": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      29671
+    ]
+  },
+  "organization": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "cloudController",
+      1
+    ]
+  },
+  "merakiProducts": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "meraki",
+      2
+    ]
+  },
+  "traps": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "organization",
+      7
+    ]
+  },
+  "merakiObjects": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "meraki",
+      3
+    ]
+  },
+  "changeDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "merakiObjects",
+      1
+    ]
+  },
+  "loginEmail": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "merakiObjects",
+      2
+    ]
+  },
+  "loginResult": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "merakiObjects",
+      3
+    ]
+  },
+  "loginDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "merakiObjects",
+      4
+    ]
+  },
+  "tunnelDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "merakiObjects",
+      5
+    ]
+  },
+  "period": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "merakiObjects",
+      6
+    ]
+  },
+  "endOfHighUsageWindow": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "merakiObjects",
+      7
+    ]
+  },
+  "threshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "merakiObjects",
+      8
+    ]
+  },
+  "usage": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "merakiObjects",
+      9
+    ]
+  },
+  "organizationName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "organization",
+      1
+    ]
+  },
+  "networkTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF MerakiNetwork"
+    },
+    "index": null,
+    "value": [
+      "organization",
+      2
+    ]
+  },
+  "networkEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MerakiNetwork"
+    },
+    "index": [
+      "networkId"
+    ],
+    "value": [
+      "networkTable",
+      1
+    ]
+  },
+  "MerakiNetwork": {
+    "tp": "SEQUENCE"
+  },
+  "networkId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "networkEntry",
+      1
+    ]
+  },
+  "networkName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "networkEntry",
+      2
+    ]
+  },
+  "networkAdmin": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "networkEntry",
+      3
+    ]
+  },
+  "vpnPeer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "networkEntry",
+      4
+    ]
+  },
+  "ssidTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF MerakiSSID"
+    },
+    "index": null,
+    "value": [
+      "organization",
+      3
+    ]
+  },
+  "ssidEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MerakiSSID"
+    },
+    "index": [
+      "networkId",
+      "ssidNumber"
+    ],
+    "value": [
+      "ssidTable",
+      1
+    ]
+  },
+  "MerakiSSID": {
+    "tp": "SEQUENCE"
+  },
+  "ssidNetworkName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ssidEntry",
+      1
+    ]
+  },
+  "ssidNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "ssidEntry",
+      2
+    ]
+  },
+  "ssidName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ssidEntry",
+      3
+    ]
+  },
+  "userName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ssidEntry",
+      4
+    ]
+  },
+  "userEmail": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "ssidEntry",
+      5
+    ]
+  },
+  "radiusServerIp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "ssidEntry",
+      6
+    ]
+  },
+  "radiusServerPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "ssidEntry",
+      7
+    ]
+  },
+  "devTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF MerakiDev"
+    },
+    "index": null,
+    "value": [
+      "organization",
+      4
+    ]
+  },
+  "devEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MerakiDev"
+    },
+    "index": [
+      "devMac"
+    ],
+    "value": [
+      "devTable",
+      1
+    ]
+  },
+  "MerakiDev": {
+    "tp": "SEQUENCE"
+  },
+  "devMac": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PhysAddress"
+    },
+    "index": null,
+    "value": [
+      "devEntry",
+      1
+    ]
+  },
+  "devName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "devEntry",
+      2
+    ]
+  },
+  "devStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "offline",
+        "1": "online"
+      }
+    },
+    "index": null,
+    "value": [
+      "devEntry",
+      3
+    ]
+  },
+  "devContactedAt": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DateAndTime"
+    },
+    "index": null,
+    "value": [
+      "devEntry",
+      4
+    ]
+  },
+  "devClientCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "devEntry",
+      5
+    ]
+  },
+  "devMeshStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "gateway",
+        "1": "repeater"
+      }
+    },
+    "index": null,
+    "value": [
+      "devEntry",
+      6
+    ]
+  },
+  "devPublicIp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "devEntry",
+      7
+    ]
+  },
+  "devSerial": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "devEntry",
+      8
+    ]
+  },
+  "devProductCode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "devEntry",
+      9
+    ]
+  },
+  "devProductDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "devEntry",
+      10
+    ]
+  },
+  "devNetworkName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "devEntry",
+      11
+    ]
+  },
+  "devLanIp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "IpAddress"
+    },
+    "index": null,
+    "value": [
+      "devEntry",
+      12
+    ]
+  },
+  "devSubnet": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "devEntry",
+      13
+    ]
+  },
+  "devCellularStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "devEntry",
+      14
+    ]
+  },
+  "devInterfaceTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF MerakiDev"
+    },
+    "index": null,
+    "value": [
+      "organization",
+      5
+    ]
+  },
+  "devInterfaceEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MerakiDev"
+    },
+    "index": [
+      "devInterfaceDevMac",
+      "devInterfaceIndex"
+    ],
+    "value": [
+      "devInterfaceTable",
+      1
+    ]
+  },
+  "devInterfaceDevMac": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "PhysAddress"
+    },
+    "index": null,
+    "value": [
+      "devInterfaceEntry",
+      1
+    ]
+  },
+  "devInterfaceIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "devInterfaceEntry",
+      2
+    ]
+  },
+  "devInterfaceName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "devInterfaceEntry",
+      3
+    ]
+  },
+  "devInterfaceSentPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "devInterfaceEntry",
+      4
+    ]
+  },
+  "devInterfaceRecvPkts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "devInterfaceEntry",
+      5
+    ]
+  },
+  "devInterfaceSentBytes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "devInterfaceEntry",
+      6
+    ]
+  },
+  "devInterfaceRecvBytes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Counter32"
+    },
+    "index": null,
+    "value": [
+      "devInterfaceEntry",
+      7
+    ]
+  },
+  "devInterfaceModel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "devInterfaceEntry",
+      8
+    ]
+  },
+  "devInterfaceCarrier": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "devInterfaceEntry",
+      9
+    ]
+  },
+  "devInterfaceDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "devInterfaceEntry",
+      10
+    ]
+  },
+  "devInterfacePortDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "devInterfaceEntry",
+      11
+    ]
+  },
+  "vlanTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF MerakiVLAN"
+    },
+    "index": null,
+    "value": [
+      "organization",
+      6
+    ]
+  },
+  "vlanEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "MerakiVLAN"
+    },
+    "index": [
+      "networkId",
+      "vlanNumber"
+    ],
+    "value": [
+      "vlanTable",
+      1
+    ]
+  },
+  "powerSupplyNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "devInterfaceEntry",
+      12
+    ]
+  },
+  "actionTaken": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "devInterfaceEntry",
+      13
+    ]
+  },
+  "portNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "devInterfaceEntry",
+      14
+    ]
+  },
+  "MerakiVLAN": {
+    "tp": "SEQUENCE"
+  },
+  "vlanNetworkName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "vlanEntry",
+      1
+    ]
+  },
+  "vlanNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER"
+    },
+    "index": null,
+    "value": [
+      "vlanEntry",
+      2
+    ]
+  },
+  "vlanName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "vlanEntry",
+      3
+    ]
+  },
+  "mini": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      1
+    ]
+  },
+  "id2": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      2
+    ]
+  },
+  "wpg": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      3
+    ]
+  },
+  "od1": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      4
+    ]
+  },
+  "od2": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      5
+    ]
+  },
+  "od3": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      6
+    ]
+  },
+  "mo1": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      7
+    ]
+  },
+  "sol": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      8
+    ]
+  },
+  "lr1": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      9
+    ]
+  },
+  "mr11": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      10
+    ]
+  },
+  "mr12": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      11
+    ]
+  },
+  "mr14": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      12
+    ]
+  },
+  "mr16": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      13
+    ]
+  },
+  "mr24": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      14
+    ]
+  },
+  "mr62": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      15
+    ]
+  },
+  "mr66": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      16
+    ]
+  },
+  "mr34": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      17
+    ]
+  },
+  "mr18": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      18
+    ]
+  },
+  "mr26": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      19
+    ]
+  },
+  "mr32": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      20
+    ]
+  },
+  "mr72": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      21
+    ]
+  },
+  "mr42": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      22
+    ]
+  },
+  "mr52": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      23
+    ]
+  },
+  "mr53": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      24
+    ]
+  },
+  "mr84": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      25
+    ]
+  },
+  "mr30h": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      26
+    ]
+  },
+  "mr33": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      27
+    ]
+  },
+  "mr74": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      28
+    ]
+  },
+  "mr70": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      29
+    ]
+  },
+  "mr45": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      30
+    ]
+  },
+  "mr55": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      31
+    ]
+  },
+  "mr42e": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      32
+    ]
+  },
+  "mr53e": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      33
+    ]
+  },
+  "mr20": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      34
+    ]
+  },
+  "gr10": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      35
+    ]
+  },
+  "gr60": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      36
+    ]
+  },
+  "mr36": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      37
+    ]
+  },
+  "mr46": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      38
+    ]
+  },
+  "mr46e": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      39
+    ]
+  },
+  "mr56": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      40
+    ]
+  },
+  "mr76": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      41
+    ]
+  },
+  "mr86": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      42
+    ]
+  },
+  "mr44": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      43
+    ]
+  },
+  "mr36h": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      44
+    ]
+  },
+  "mr28": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      45
+    ]
+  },
+  "gr12": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      46
+    ]
+  },
+  "gr62": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      47
+    ]
+  },
+  "mr78": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      48
+    ]
+  },
+  "mr57": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      49
+    ]
+  },
+  "cw9162i": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      50
+    ]
+  },
+  "cw9164i": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      51
+    ]
+  },
+  "cw9166d1": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      52
+    ]
+  },
+  "cw9166i": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      53
+    ]
+  },
+  "cw9163e": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      54
+    ]
+  },
+  "cw9176i": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      55
+    ]
+  },
+  "cw9176d1": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      56
+    ]
+  },
+  "cw9178i": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      57
+    ]
+  },
+  "cw9172i": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      58
+    ]
+  },
+  "z1": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      100
+    ]
+  },
+  "mx400": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      104
+    ]
+  },
+  "mx600": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      105
+    ]
+  },
+  "mx100": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      106
+    ]
+  },
+  "mx64": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      107
+    ]
+  },
+  "mx64w": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      108
+    ]
+  },
+  "mx84": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      109
+    ]
+  },
+  "mx65": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      110
+    ]
+  },
+  "mx65w": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      111
+    ]
+  },
+  "mx250": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      112
+    ]
+  },
+  "mx450": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      113
+    ]
+  },
+  "mx650": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      114
+    ]
+  },
+  "z3": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      116
+    ]
+  },
+  "gx20": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      117
+    ]
+  },
+  "mx67": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      118
+    ]
+  },
+  "mx67w": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      119
+    ]
+  },
+  "mx67c": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      120
+    ]
+  },
+  "mx68": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      121
+    ]
+  },
+  "mx68w": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      122
+    ]
+  },
+  "mx68cw": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      123
+    ]
+  },
+  "z3c": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      124
+    ]
+  },
+  "mx85": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      125
+    ]
+  },
+  "mx75": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      126
+    ]
+  },
+  "mx95": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      127
+    ]
+  },
+  "mx105": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      128
+    ]
+  },
+  "gx50": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      129
+    ]
+  },
+  "z4": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      130
+    ]
+  },
+  "merakiVM10": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      200
+    ]
+  },
+  "ms22": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      300
+    ]
+  },
+  "ms22p": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      301
+    ]
+  },
+  "ms42": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      302
+    ]
+  },
+  "ms42p": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      303
+    ]
+  },
+  "ms220-8": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      304
+    ]
+  },
+  "ms220-8p": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      305
+    ]
+  },
+  "ms220-24": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      306
+    ]
+  },
+  "ms220-24p": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      307
+    ]
+  },
+  "ms220-48": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      308
+    ]
+  },
+  "ms220-48lp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      309
+    ]
+  },
+  "ms220-48fp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      310
+    ]
+  },
+  "ms320-24": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      311
+    ]
+  },
+  "ms320-24p": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      312
+    ]
+  },
+  "ms320-48": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      313
+    ]
+  },
+  "ms320-48lp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      314
+    ]
+  },
+  "ms320-48fp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      315
+    ]
+  },
+  "ms420-24": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      316
+    ]
+  },
+  "ms420-48": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      317
+    ]
+  },
+  "ms350-24": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      318
+    ]
+  },
+  "ms350-24p": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      319
+    ]
+  },
+  "ms350-48": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      320
+    ]
+  },
+  "ms350-48lp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      321
+    ]
+  },
+  "ms350-48fp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      322
+    ]
+  },
+  "ms410-16": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      323
+    ]
+  },
+  "ms410-32": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      324
+    ]
+  },
+  "ms425-16": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      325
+    ]
+  },
+  "ms425-32": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      326
+    ]
+  },
+  "ms350-24x": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      327
+    ]
+  },
+  "ms225-24": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      328
+    ]
+  },
+  "ms225-24p": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      329
+    ]
+  },
+  "ms225-48": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      330
+    ]
+  },
+  "ms225-48lp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      331
+    ]
+  },
+  "ms225-48fp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      332
+    ]
+  },
+  "ms250-24": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      333
+    ]
+  },
+  "ms250-24p": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      334
+    ]
+  },
+  "ms250-48": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      335
+    ]
+  },
+  "ms250-48lp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      336
+    ]
+  },
+  "ms250-48fp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      337
+    ]
+  },
+  "ms120-8": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      338
+    ]
+  },
+  "ms120-8lp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      339
+    ]
+  },
+  "ms120-8fp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      340
+    ]
+  },
+  "ms120-24": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      341
+    ]
+  },
+  "ms120-24p": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      342
+    ]
+  },
+  "ms120-48": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      343
+    ]
+  },
+  "ms120-48lp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      344
+    ]
+  },
+  "ms210-24": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      345
+    ]
+  },
+  "ms210-24p": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      346
+    ]
+  },
+  "ms210-48": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      347
+    ]
+  },
+  "ms210-48lp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      348
+    ]
+  },
+  "ms210-48fp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      349
+    ]
+  },
+  "ms120-48fp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      356
+    ]
+  },
+  "ms355-24x": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      357
+    ]
+  },
+  "ms355-24x2": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      358
+    ]
+  },
+  "ms355-48x": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      359
+    ]
+  },
+  "ms355-48x2": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      360
+    ]
+  },
+  "ms450-12": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      361
+    ]
+  },
+  "ms390-24": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      362
+    ]
+  },
+  "ms390-24p": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      363
+    ]
+  },
+  "ms390-24u": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      364
+    ]
+  },
+  "ms390-24ux": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      365
+    ]
+  },
+  "ms390-48": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      366
+    ]
+  },
+  "ms390-48p": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      367
+    ]
+  },
+  "ms390-48u": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      368
+    ]
+  },
+  "ms390-48ux": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      369
+    ]
+  },
+  "ms390-48ux2": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      370
+    ]
+  },
+  "ms125-24": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      371
+    ]
+  },
+  "ms125-24p": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      372
+    ]
+  },
+  "ms125-48": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      373
+    ]
+  },
+  "ms125-48lp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      374
+    ]
+  },
+  "ms125-48fp": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      375
+    ]
+  },
+  "ms130-8": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      395
+    ]
+  },
+  "ms130-8p": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      396
+    ]
+  },
+  "ms130-8x": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      397
+    ]
+  },
+  "ms130-12x": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      398
+    ]
+  },
+  "ms130-24": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      399
+    ]
+  },
+  "ms130-24p": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      400
+    ]
+  },
+  "ms130-24x": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      401
+    ]
+  },
+  "ms130-48": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      402
+    ]
+  },
+  "ms130-48p": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      403
+    ]
+  },
+  "ms130-48x": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      404
+    ]
+  },
+  "ms130r-8p": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      405
+    ]
+  },
+  "ms150-48mp-4x": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      443
+    ]
+  },
+  "ms150-24t-4g": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      444
+    ]
+  },
+  "ms150-24p-4g": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      445
+    ]
+  },
+  "ms150-24t-4x": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      446
+    ]
+  },
+  "ms150-24p-4x": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      447
+    ]
+  },
+  "ms150-24mp-4x": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      448
+    ]
+  },
+  "ms150-48t-4g": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      449
+    ]
+  },
+  "ms150-48lp-4g": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      450
+    ]
+  },
+  "ms150-48fp-4g": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      451
+    ]
+  },
+  "ms150-48t-4x": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      452
+    ]
+  },
+  "ms150-48lp-4x": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      453
+    ]
+  },
+  "ms150-48fp-4x": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      454
+    ]
+  },
+  "ms130-8p-i": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "merakiProducts",
+      483
+    ]
+  }
+}
