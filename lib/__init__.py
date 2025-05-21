@@ -1,1 +1,2 @@
-DOCS_URL = 'https://docs.infrasonar.com/collectors/probes/snmp/merakicontroller/'
+DOCS_URL = \
+    'https://docs.infrasonar.com/collectors/probes/snmp/merakicontroller/'
