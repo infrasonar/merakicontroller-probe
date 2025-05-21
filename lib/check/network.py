@@ -4,7 +4,7 @@ from ..snmpclient import get_snmp_client
 from ..snmpquery import snmpquery
 
 QUERIES = (
-    (MIB_INDEX['MERAKI-CLOUD-CONTROLLER-MIB']['networkEntry'], False),
+    (MIB_INDEX['MERAKI-CLOUD-CONTROLLER-MIB']['networkEntry'], True),
 )
 
 
