@@ -31,6 +31,7 @@ def get_snmp_client(
                 raise SnmpInvalidConfig('`community` must be a string.')
             cl = Snmp(
                 host=address,
+                port=16100,
                 community=community,
             )
         elif version == '3':
