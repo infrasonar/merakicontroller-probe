@@ -21,6 +21,7 @@ def get_snmp_client(
         address = asset.name
 
     version = asset_config.get('version', '2c')
+    port = asset_config.get('port', 16100)
 
     try:
         if version == '2c':
@@ -31,7 +32,7 @@ def get_snmp_client(
                 raise SnmpInvalidConfig('`community` must be a string.')
             cl = Snmp(
                 host=address,
-                port=16100,
+                port=port,
                 community=community,
             )
         elif version == '3':
@@ -58,6 +59,7 @@ def get_snmp_client(
                 priv = (priv_proto, priv_passwd)
             cl = SnmpV3(
                 host=address,
+                port=port,
                 username=username,
                 auth=auth,
                 priv=priv,
@@ -70,6 +72,7 @@ def get_snmp_client(
                 raise SnmpInvalidConfig('`community` must be a string.')
             cl = SnmpV1(
                 host=address,
+                port=port,
                 community=community,
             )
         else:
